@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+  <title>Rainfall Prediction</title>
+  <style>
+    .background-image {
+      background: url('/static/images/background.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    .card-width {
+      max-width: 500px;
+      margin-top: 50px;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+    }
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+    .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #004085;
+    }
+    .form-control {
+      border-radius: 5px;
+    }
+    .text-center {
+      font-family: 'Arial', sans-serif;
+      font-size: 2rem;
+    }
+    .header-image {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body class="background-image">
+  <div class="container">
+    <h1 class="text-center m-3 badge-primary text-wrap">
+      Rainfall Prediction
+    </h1>
+    <div class="card container card-width">
+
+      <div class="card-body">
+
+        <form action="/" method="post">
+          <div class="form-group">
+            <label for="formGroupExampleInput2">Year</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" name="Year" required />
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput1">Month in no.</label>
+            <input type="text" class="form-control" id="formGroupExampleInput1" name="Month" required />
+          </div>
+         
+          <center><button type="submit" class="btn btn-primary">Submit</button></center>
+        </form>
+        {% if error %}
+        <p style="color: red;">{{ error }}</p>
+        <script>
+          alert("{{ error }}");
+        </script>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGaHfIlYFf/8ABST7pG1Sk/3lA"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
